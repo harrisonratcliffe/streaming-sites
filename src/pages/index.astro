@@ -1,0 +1,136 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Card from '../components/Card.astro';
+
+export const prerender = true;
+---
+
+<Layout title="Free Streaming Sites">
+    <main>
+        <h1>Free <span class="text-gradient">Streaming</span> Sites</h1>
+        <p class="instructions">
+            A list of free streaming sites for movies, TV series and sports. Note: these sites are all hosted externally.
+        </p>
+
+        <div class="two-column-grid">
+            <h2>Movies &amp; TV Series</h2>
+            <h2>Sports</h2>
+
+            <div class="column">
+                <Card
+                        href="https://1movies.bz/home"
+                        title="1Movies"
+                        body="By far the best for movies and TV series, no adverts."
+                />
+                <Card
+                        href="https://theflixerz.tube"
+                        title="TheFlixerz"
+                        body="Need a VPN outside of the UK."
+                />
+            </div>
+
+            <div class="column">
+                <Card
+                        href="https://soccer-100.net/"
+                        title="Soccer100"
+                        body="The best streams for football matches."
+                />
+                <Card
+                        href="https://reddit.boxingbite.net/"
+                        title="Boxing Bite"
+                        body="Boxing fight streams."
+                />
+                <Card
+                        href="https://mmabite.net/"
+                        title="MMA Bite"
+                        body="MMA/UFC fight streams."
+                />
+                <Card
+                        href="https://v3.sportsurge.to/home42"
+                        title="SportSurge"
+                        body="A mix of everything, quality is mostly ok."
+                />
+                <Card
+                        href="https://livesports808.sbs/"
+                        title="LiveSports808"
+                        body="Best if the above don't have the stream on."
+                />
+            </div>
+        </div>
+    </main>
+</Layout>
+
+<style>
+    :root {
+        --astro-gradient: linear-gradient(0deg, #4f39fa, #da62c4);
+    }
+
+    h1 {
+        margin: 2rem 0;
+        text-align: center;
+    }
+
+    main {
+        margin: auto;
+        padding: 1em;
+        max-width: 80ch;
+    }
+
+    .text-gradient {
+        font-weight: 900;
+        background-image: var(--astro-gradient);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-size: 100% 200%;
+        background-position-y: 100%;
+        border-radius: 0.4rem;
+        animation: pulse 4s ease-in-out infinite;
+    }
+
+    @keyframes pulse {
+        0%,
+        100% {
+            background-position-y: 0%;
+        }
+        50% {
+            background-position-y: 80%;
+        }
+    }
+
+    .instructions {
+        line-height: 1.6;
+        margin: 1rem 0;
+        background: #4f39fa;
+        padding: 1rem;
+        border-radius: 0.4rem;
+        color: var(--color-bg);
+    }
+
+    .two-column-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1rem;
+        text-align: center;
+    }
+
+    .two-column-grid > h2 {
+        margin-bottom: 0.5rem;
+    }
+
+    .three-column-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1rem;
+        text-align: center;
+    }
+
+    .three-column-grid > h2 {
+        margin-bottom: 0.5rem;
+    }
+
+    .column {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+    }
+</style>
